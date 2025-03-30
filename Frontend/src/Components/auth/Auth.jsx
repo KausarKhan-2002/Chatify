@@ -11,7 +11,8 @@ import { useCloudinary } from "../../Hooks/useCloudinary";
 function Auth() {
   const [isSignup, setIsSignup] = useState(false);
   const [showPassword, setShowPassword] = useState("password");
-  const [imgUrl, setImgUrl] = useState(null);
+  const [tempUrl, setTempUrl] = useState(null);
+  const [selectFile, setSelectFile] = useState(null)
   const [step, setStep] = useState(1); // Step 1 or Step 2
   const [cloudinaryImg, setCloudinaryImg] = useState(null)
   const [userInfo, setUserInfo] = useState({
@@ -33,16 +34,17 @@ function Auth() {
       if (validate(userInfo, "login")) return;
     }
 
-    cloudinary(imgUrl,setCloudinaryImg)
+    cloudinary(selectFile,setCloudinaryImg)
 
     console.log(userInfo);
   };
 
   const handleFile = (e) => {
     const file = e.target.files[0];
+    if (!file) return
     const url = URL.createObjectURL(file);
-
-    setImgUrl(url);
+    setSelectFile(file)
+    setTempUrl(url);
   };
 
   return (
@@ -55,7 +57,7 @@ function Auth() {
         {isSignup && step === 1 && (
           <div className="relative flex justify-center mt-4">
             <img
-              src={imgUrl || DEFAULT_IMG_URL}
+              src={tempUrl || DEFAULT_IMG_URL}
               className="w-32 h-32 rounded-full object-cover border-4 border-white shadow-md"
               alt="Profile"
             />

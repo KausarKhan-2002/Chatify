@@ -1,26 +1,41 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import PanelContainer from "./Components/panels/panelContainer";
 import { lazy } from "react";
-
+import { Toaster } from "react-hot-toast";
+import ProtectRoute from "./Components/auth/ProtectRoute";
 
 const Home = lazy(() => import("./pages/Home"));
 const About = lazy(() => import("./pages/About"));
-const Auth = lazy(() => import("./Components/auth/Auth"))
+const Auth = lazy(() => import("./Components/auth/Auth"));
 const Chat = lazy(() => import("./pages/Chat"));
-const Groups = lazy(() => import("./pages/Groups"))
-import {Toaster} from "react-hot-toast"
+const Groups = lazy(() => import("./pages/Groups"));
+const NotFound = lazy(() => import("./pages/NotFound"))
 
+const user = true;
 function App() {
   return (
     <BrowserRouter>
-    <Toaster />
+      <Toaster />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/auth" element={<Auth />} />
-        <Route path="/chat/:chatId" element={<Chat />} />
-        <Route path="/groups" element={<Groups />} />
-        <Route path="/panel" element={<PanelContainer />} />
+        <Route element={<ProtectRoute user={user} />}>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/chat/:chatId" element={<Chat />} />
+          <Route path="/groups" element={<Groups />} />
+          <Route path="/panel" element={<PanelContainer />} />
+        </Route>
+
+        {/* If user already login, protect login and signup page */}
+        <Route
+          path="/auth"
+          element={
+            <ProtectRoute user={!user} redirect={"/"}>
+              <Auth />
+            </ProtectRoute>
+          }
+        />
+
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   );

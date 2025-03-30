@@ -5,13 +5,12 @@ import { Toaster } from "react-hot-toast";
 import ProtectRoute from "./Components/auth/ProtectRoute";
 
 const Home = lazy(() => import("./pages/Home"));
-const About = lazy(() => import("./pages/About"));
 const Auth = lazy(() => import("./Components/auth/Auth"));
 const Chat = lazy(() => import("./pages/Chat"));
 const Groups = lazy(() => import("./pages/Groups"));
 const NotFound = lazy(() => import("./pages/NotFound"))
 
-const user = false;
+const user = true;
 function App() {
   return (
     <BrowserRouter>
@@ -19,7 +18,6 @@ function App() {
       <Routes>
         <Route element={<ProtectRoute user={user} />}>
           <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
           <Route path="/chat/:chatId" element={<Chat />} />
           <Route path="/groups" element={<Groups />} />
           <Route path="/panel" element={<PanelContainer />} />

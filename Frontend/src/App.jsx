@@ -1,8 +1,11 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import PanelContainer from "./Components/panels/panelContainer";
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, useEffect } from "react";
 import { Toaster } from "react-hot-toast";
 import ProtectRoute from "./Components/auth/ProtectRoute";
+import { useDispatch } from "react-redux";
+import { addProfile } from "./Store/profileSlice";
+import { myProfile } from "./Utils/myProfile";
 
 const Auth = lazy(() => import("./Components/auth/Auth"));
 const NotFound = lazy(() => import("./components/notFound/NotFound"));
@@ -12,13 +15,21 @@ const NotFound = lazy(() => import("./components/notFound/NotFound"));
 const user = true;
 
 function App() {
+  const dispatch = useDispatch();
+
+
+  // Suppose to be my profile
+  useEffect(() => {
+    dispatch(addProfile(myProfile));
+  }, []);
+
   return (
     <BrowserRouter>
       <Toaster />
       <Suspense fallback={<h2>Loading...</h2>}>
         <Routes>
           <Route element={<ProtectRoute user={user} />}>
-              <Route path="/" element={<PanelContainer />} />
+            <Route path="/" element={<PanelContainer />} />
           </Route>
 
           {/* If user already login, protect login and signup page */}

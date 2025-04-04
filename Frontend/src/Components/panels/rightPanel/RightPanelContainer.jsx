@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import ChatWindow from "./ChatWindow";
 
-function RightPanelContainer({ showLeftPanel }) {
+function RightPanelContainer() {
   const currentChat = useSelector((store) => store.currentChat);
   console.log(currentChat);
 

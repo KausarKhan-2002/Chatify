@@ -1,24 +1,27 @@
 import React, { useState } from "react";
 import { chatUsers } from "../../../Utils/testingUser";
 import { MdWifiCalling3 } from "react-icons/md";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { openNewChat } from "../../../Store/currentChatSlice";
 import toast from "react-hot-toast";
 
 function ChatListItem() {
   const dispatch = useDispatch();
   const [active, setActive] = useState(null); // store active user id
+  const profile = useSelector((store) => store.profile);
+  if (!profile) return;
 
-  const handleChatUsers = (e,user) => {
+  const users = chatUsers.filter((user) => user.id != profile.id);
+
+  const handleChatUsers = (e, user) => {
     if (e.target.id === "phonecall") {
-   
       toast.error("📞 Calling feature is under process...");
-        // alert("Under preocesd")
-        return
-      
+      // alert("Under preocesd")
+      return;
     }
-    
+
     setActive(user.id); // update active user
+
     dispatch(openNewChat(user));
   };
 
@@ -26,7 +29,7 @@ function ChatListItem() {
     <div className="bg-gray-900 p-4 shadow-lg h-[94vh] overflow-auto dark-scrollbar">
       <h2 className="text-lg font-semibold text-white mb-3">Chats</h2>
 
-      {chatUsers.map((user) => {
+      {users.map((user) => {
         const lastMessage =
           user.messages.length > 0
             ? user.messages[user.messages.length - 1]
@@ -39,7 +42,7 @@ function ChatListItem() {
         return (
           <div
             key={user.id}
-            onClick={(e) => handleChatUsers(e,user)}
+            onClick={(e) => handleChatUsers(e, user)}
             className={`flex items-center gap-7 px-3 py-3 rounded-lg transition relative cursor-pointer
               ${
                 isActive

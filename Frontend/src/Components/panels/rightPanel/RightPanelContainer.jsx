@@ -1,5 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import ChatWindow from "./ChatWindow";
 
 function RightPanelContainer({ showLeftPanel }) {
   const currentChat = useSelector((store) => store.currentChat);
@@ -7,9 +8,9 @@ function RightPanelContainer({ showLeftPanel }) {
 
   return (
     <div
-      className={`bg-red-400 w-[100%] sm:w-[60%]`}
+      className={`w-[100%] sm:w-[60%]`}
     >
-      Right panel
+     <ChatWindow />
     </div>
   );
 }

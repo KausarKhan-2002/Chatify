@@ -20,7 +20,8 @@ export const chatUsers = [
     archivedChats: ["u6"],
     callHistory: [
       { with: "u2", type: "voice", duration: "10:30", timestamp: "1 day ago" }
-    ]
+    ],
+    draft: "Let’s catch up this weekend!"
   },
   {
     id: "u2",
@@ -42,7 +43,8 @@ export const chatUsers = [
     archivedChats: [],
     callHistory: [
       { with: "u4", type: "video", duration: "20:15", timestamp: "2 days ago" }
-    ]
+    ],
+    draft: ""
   },
   {
     id: "u3",
@@ -62,7 +64,8 @@ export const chatUsers = [
     blockedUsers: ["u7"],
     pinnedChats: ["u6"],
     archivedChats: ["u2"],
-    callHistory: []
+    callHistory: [],
+    draft: "Don't forget the gaming night!"
   },
   {
     id: "u4",
@@ -84,7 +87,8 @@ export const chatUsers = [
     archivedChats: [],
     callHistory: [
       { with: "u2", type: "voice", duration: "05:45", timestamp: "3 days ago" }
-    ]
+    ],
+    draft: ""
   },
   {
     id: "u5",
@@ -106,7 +110,8 @@ export const chatUsers = [
     archivedChats: [],
     callHistory: [
       { with: "u3", type: "video", duration: "15:20", timestamp: "1 week ago" }
-    ]
+    ],
+    draft: "Movie suggestions?"
   },
   {
     id: "u6",
@@ -128,7 +133,8 @@ export const chatUsers = [
     archivedChats: ["u5"],
     callHistory: [
       { with: "u5", type: "voice", duration: "08:45", timestamp: "4 days ago" }
-    ]
+    ],
+    draft: ""
   },
   {
     id: "u7",
@@ -148,10 +154,11 @@ export const chatUsers = [
     blockedUsers: ["u3"],
     pinnedChats: ["u1"],
     archivedChats: [],
-    callHistory: []
+    callHistory: [],
+    draft: "Send me the report pls."
   },
   {
-    id: "u1",
+    id: "u8",
     name: "John Doe",
     username: "john_doe",
     email: "johndoe@example.com",
@@ -171,10 +178,11 @@ export const chatUsers = [
     archivedChats: ["u6"],
     callHistory: [
       { with: "u2", type: "voice", duration: "10:30", timestamp: "1 day ago" }
-    ]
+    ],
+    draft: ""
   },
   {
-    id: "u2",
+    id: "u9",
     name: "Jane Smith",
     username: "jane_smith",
     email: "janesmith@example.com",
@@ -193,10 +201,11 @@ export const chatUsers = [
     archivedChats: [],
     callHistory: [
       { with: "u4", type: "video", duration: "20:15", timestamp: "2 days ago" }
-    ]
+    ],
+    draft: "Wanna go for a trip?"
   },
   {
-    id: "u3",
+    id: "u10",
     name: "Michael Brown",
     username: "michael_brown",
     email: "michaelbrown@example.com",
@@ -213,92 +222,199 @@ export const chatUsers = [
     blockedUsers: ["u7"],
     pinnedChats: ["u6"],
     archivedChats: ["u2"],
-    callHistory: []
+    callHistory: [],
+    draft: ""
   },
-  {
-    id: "u4",
-    name: "Emily Johnson",
-    username: "emily_johnson",
-    email: "emilyjohnson@example.com",
-    phone: "+6677889900",
-    profilePic: "https://randomuser.me/api/portraits/women/4.jpg",
-    bio: "Nature photographer and explorer",
-    status: "away",
-    lastSeen: "5h ago",
-    messages: [
-      { from: "u5", to: "u4", message: "Check out this landscape!", timestamp: "5h ago" }
-    ],
-    contacts: ["u2", "u5"],
-    groups: ["g1"],
-    blockedUsers: [],
-    pinnedChats: ["u2"],
-    archivedChats: [],
-    callHistory: [
-      { with: "u2", type: "voice", duration: "05:45", timestamp: "3 days ago" }
-    ]
-  },
-  {
-    id: "u5",
-    name: "Robert Williams",
-    username: "robert_williams",
-    email: "robertwilliams@example.com",
-    phone: "+5544332211",
-    profilePic: "https://randomuser.me/api/portraits/men/5.jpg",
-    bio: "Movie buff and aspiring director",
-    status: "online",
-    lastSeen: "active now",
-    messages: [
-      { from: "u3", to: "u5", message: "Did you watch that new movie?", timestamp: "15m ago" }
-    ],
-    contacts: ["u1", "u3", "u6"],
-    groups: ["g2"],
-    blockedUsers: ["u1"],
-    pinnedChats: ["u4"],
-    archivedChats: [],
-    callHistory: [
-      { with: "u3", type: "video", duration: "15:20", timestamp: "1 week ago" }
-    ]
-  },
-  {
-    id: "u6",
-    name: "Sophia Martinez",
-    username: "sophia_martinez",
-    email: "sophiamartinez@example.com",
-    phone: "+9988776655",
-    profilePic: "https://randomuser.me/api/portraits/women/6.jpg",
-    bio: "AI researcher and bookworm",
-    status: "offline",
-    lastSeen: "yesterday",
-    messages: [
-      { from: "u2", to: "u6", message: "Let's catch up soon!", timestamp: "yesterday" }
-    ],
-    contacts: ["u1", "u3"],
-    groups: ["g3"],
-    blockedUsers: [],
-    pinnedChats: [],
-    archivedChats: ["u5"],
-    callHistory: [
-      { with: "u5", type: "voice", duration: "08:45", timestamp: "4 days ago" }
-    ]
-  },
-  {
-    id: "u7",
-    name: "Daniel Carter",
-    username: "daniel_carter",
-    email: "danielcarter@example.com",
-    phone: "+7766554433",
-    profilePic: "https://randomuser.me/api/portraits/men/7.jpg",
-    bio: "Entrepreneur and fitness enthusiast",
-    status: "online",
-    lastSeen: "3h ago",
-    messages: [
-      { from: "u6", to: "u7", message: "Any updates on the project?", timestamp: "4h ago" }
-    ],
-    contacts: ["u4", "u6"],
-    groups: ["g1", "g3"],
-    blockedUsers: ["u3"],
-    pinnedChats: ["u1"],
-    archivedChats: [],
-    callHistory: []
-  }
+  // Continuing from u10...
+{
+  id: "u11",
+  name: "Aarav Sharma",
+  username: "aarav_sharma",
+  email: "aaravsharma@example.com",
+  phone: "+911234567890",
+  profilePic: "https://randomuser.me/api/portraits/men/11.jpg",
+  bio: "Cricket lover and frontend dev",
+  status: "online",
+  lastSeen: "10m ago",
+  messages: [],
+  contacts: ["u1", "u2", "u3"],
+  groups: ["g4"],
+  blockedUsers: [],
+  pinnedChats: [],
+  archivedChats: [],
+  callHistory: [],
+  draft: "Net practice ke liye kab milna hai?"
+},
+{
+  id: "u12",
+  name: "Anaya Patel",
+  username: "anaya_patel",
+  email: "anayapatel@example.com",
+  phone: "+919876543210",
+  profilePic: "https://randomuser.me/api/portraits/women/12.jpg",
+  bio: "Dancer & UI/UX Designer",
+  status: "away",
+  lastSeen: "1h ago",
+  messages: [],
+  contacts: ["u2", "u5"],
+  groups: ["g1"],
+  blockedUsers: [],
+  pinnedChats: [],
+  archivedChats: [],
+  callHistory: [],
+  draft: ""
+},
+{
+  id: "u13",
+  name: "Ishaan Verma",
+  username: "ishaan_verma",
+  email: "ishaanverma@example.com",
+  phone: "+919111223344",
+  profilePic: "https://randomuser.me/api/portraits/men/13.jpg",
+  bio: "Backend dev & music fan",
+  status: "busy",
+  lastSeen: "20m ago",
+  messages: [],
+  contacts: ["u1", "u4", "u6"],
+  groups: ["g2", "g3"],
+  blockedUsers: [],
+  pinnedChats: [],
+  archivedChats: [],
+  callHistory: [],
+  draft: "API response me error aa raha hai"
+},
+{
+  id: "u14",
+  name: "Kriti Mehra",
+  username: "kriti_mehra",
+  email: "kritimehra@example.com",
+  phone: "+919000112233",
+  profilePic: "https://randomuser.me/api/portraits/women/14.jpg",
+  bio: "Plant mom & blogger",
+  status: "offline",
+  lastSeen: "yesterday",
+  messages: [],
+  contacts: ["u3", "u7"],
+  groups: [],
+  blockedUsers: [],
+  pinnedChats: [],
+  archivedChats: [],
+  callHistory: [],
+  draft: ""
+},
+{
+  id: "u15",
+  name: "Yuvraj Singh",
+  username: "yuvraj_singh",
+  email: "yuvrajsingh@example.com",
+  phone: "+918888999900",
+  profilePic: "https://randomuser.me/api/portraits/men/15.jpg",
+  bio: "Freelancer & gamer",
+  status: "online",
+  lastSeen: "active now",
+  messages: [],
+  contacts: ["u1", "u8"],
+  groups: ["g5"],
+  blockedUsers: [],
+  pinnedChats: [],
+  archivedChats: [],
+  callHistory: [],
+  draft: "Zoom pe aa jaa bhai"
+},
+{
+  id: "u16",
+  name: "Riya Kapoor",
+  username: "riya_kapoor",
+  email: "riyakapoor@example.com",
+  phone: "+918123456789",
+  profilePic: "https://randomuser.me/api/portraits/women/16.jpg",
+  bio: "Fashion designer",
+  status: "away",
+  lastSeen: "3h ago",
+  messages: [],
+  contacts: ["u1", "u2"],
+  groups: [],
+  blockedUsers: [],
+  pinnedChats: [],
+  archivedChats: [],
+  callHistory: [],
+  draft: ""
+},
+{
+  id: "u17",
+  name: "Devansh Tiwari",
+  username: "devansh_tiwari",
+  email: "devanshtiwari@example.com",
+  phone: "+918877665544",
+  profilePic: "https://randomuser.me/api/portraits/men/17.jpg",
+  bio: "Cloud engineer",
+  status: "offline",
+  lastSeen: "2 days ago",
+  messages: [],
+  contacts: [],
+  groups: [],
+  blockedUsers: [],
+  pinnedChats: [],
+  archivedChats: [],
+  callHistory: [],
+  draft: "AWS me issue aa raha hai"
+},
+{
+  id: "u18",
+  name: "Meera Joshi",
+  username: "meera_joshi",
+  email: "meerajoshi@example.com",
+  phone: "+917766554433",
+  profilePic: "https://randomuser.me/api/portraits/women/18.jpg",
+  bio: "Poet & book reviewer",
+  status: "online",
+  lastSeen: "5m ago",
+  messages: [],
+  contacts: ["u4"],
+  groups: [],
+  blockedUsers: [],
+  pinnedChats: [],
+  archivedChats: [],
+  callHistory: [],
+  draft: "Ek nayi poem likhi hai"
+},
+{
+  id: "u19",
+  name: "Aryan Desai",
+  username: "aryan_desai",
+  email: "aryandesai@example.com",
+  phone: "+919911223355",
+  profilePic: "https://randomuser.me/api/portraits/men/19.jpg",
+  bio: "Marketing expert",
+  status: "busy",
+  lastSeen: "15m ago",
+  messages: [],
+  contacts: ["u1", "u5"],
+  groups: ["g3"],
+  blockedUsers: [],
+  pinnedChats: [],
+  archivedChats: [],
+  callHistory: [],
+  draft: ""
+},
+{
+  id: "u20",
+  name: "Naina Singh",
+  username: "naina_singh",
+  email: "nainasingh@example.com",
+  phone: "+918000112244",
+  profilePic: "https://randomuser.me/api/portraits/women/20.jpg",
+  bio: "Yoga instructor & wellness coach",
+  status: "away",
+  lastSeen: "1h ago",
+  messages: [],
+  contacts: ["u3", "u6"],
+  groups: [],
+  blockedUsers: [],
+  pinnedChats: [],
+  archivedChats: [],
+  callHistory: [],
+  draft: "Kal yoga session hai 7 AM se"
+}
+
 ];

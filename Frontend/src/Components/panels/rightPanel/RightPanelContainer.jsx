@@ -1,11 +1,17 @@
-import React from 'react'
+import React from "react";
+import { useSelector } from "react-redux";
 
-function RightPanelContainer({showLeftPanel}) {
+function RightPanelContainer({ showLeftPanel }) {
+  const currentChat = useSelector((store) => store.currentChat);
+  console.log(currentChat);
+
   return (
-    <div className={`bg-red-400 ${showLeftPanel ? "w-[70%]" : "w-full"}`}>
+    <div
+      className={`bg-red-400 w-[100%] sm:w-[60%]`}
+    >
       Right panel
     </div>
-  )
+  );
 }
 
-export default RightPanelContainer
+export default RightPanelContainer;

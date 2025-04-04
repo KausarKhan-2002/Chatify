@@ -1,11 +1,11 @@
 import React from 'react'
 
-function Groups() {
+function NewGroup() {
   return (
     <div>
-      Groups
+      group
     </div>
   )
 }
 
-export default Groups
+export default NewGroup
